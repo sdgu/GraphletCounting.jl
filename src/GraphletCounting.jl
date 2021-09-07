@@ -4,12 +4,11 @@ module GraphletCounting
 using LightGraphs
 
 
-
+include("DegreeOrientedDAG.jl")
 export toDAG
 
-include("DegreeOrientedDAG.jl")
-
-
+include("CountTriangles.jl")
+export wedge_enumerator
 
 
 
