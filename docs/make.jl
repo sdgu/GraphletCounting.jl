@@ -21,4 +21,5 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/sdgu/GraphletCounting.jl",
+    devbranch="main",
 )
