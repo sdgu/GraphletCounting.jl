@@ -7,7 +7,7 @@ using LightGraphs
 
 export toDAG
 
-include("DegreeOrientedDag.jl")
+include("DegreeOrientedDAG.jl")
 
 
 
