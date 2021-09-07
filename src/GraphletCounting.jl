@@ -1,6 +1,16 @@
 module GraphletCounting
 
-# Write your package code here.
+
+using LightGraphs
+
+
+
+export toDAG
+
+include("DegreeOrientedDag.jl")
+
+
+
 
 
 end
