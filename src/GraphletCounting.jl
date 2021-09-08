@@ -5,10 +5,10 @@ using LightGraphs
 
 
 include("DegreeOrientedDAG.jl")
-export toDAG
+export sort_by_deg_or!, toDAG
 
 include("CountTriangles.jl")
-export wedge_enumerator
+export enumerate_wedges
 
 
 

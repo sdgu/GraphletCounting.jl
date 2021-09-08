@@ -1,4 +1,14 @@
+# # potentially create subtype of SimpleDiGraph that has fadjlist sorted
 
+
+
+
+function sort_by_deg_or!(DG::SimpleDiGraph)
+    for i in vertices(DG) # for each node
+        # # order its out-neighbor list from lowest degree to highest degree
+        sort!(DG.fadjlist[i], lt=(x, y) -> (degree(DG, x) < degree(DG, y)) ||(degree(DG, x) == degree(DG, y) && x < y))
+    end
+end
 
 
 """
@@ -34,11 +44,12 @@ function toDAG(G::SimpleGraph)
     end
 
 
-    for i in vertices(DG) # for each node
-        # # order its out-neighbor list from lowest degree to highest degree
-        sort!(DG.fadjlist[i], lt=(x, y) -> (degree(DG, x) < degree(DG, y)) ||(degree(DG, x) == degree(DG, y) && x < y))
-    end
+    # for i in vertices(DG) # for each node
+    #     # # order its out-neighbor list from lowest degree to highest degree
+    #     sort!(DG.fadjlist[i], lt=(x, y) -> (degree(DG, x) < degree(DG, y)) ||(degree(DG, x) == degree(DG, y) && x < y))
+    # end
 
+    sort_by_deg_or!(DG)
     # println(DG.fadjlist)
     # println(DG.badjlist)
 
