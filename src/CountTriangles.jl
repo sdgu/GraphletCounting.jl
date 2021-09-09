@@ -26,6 +26,8 @@ function enumerate_wedges(DG::SimpleDiGraph)
             # # neighbor of i that isn't j, i.e., the wedge j-i-k.
             # # every neighbor before the jind^th index has already been considered as an endpoint of the wedge. So, start from the j+1st index of neighbors
             for k in neighbors(DG, i)[jind+1:end]
+
+                # # need to check julia docs more carefully, but should be fast since has_edge uses insorted, which assumes what it's looking through is sorted
                 if has_edge(DG, j, k) || has_edge(DG, k, j)
                     outinfo.total += 1
 
