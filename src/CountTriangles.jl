@@ -45,5 +45,4 @@ function enumerate_wedges(DG::SimpleDiGraph)
         end
     end
 
-
 end
